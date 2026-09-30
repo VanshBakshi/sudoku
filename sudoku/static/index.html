@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku Arena</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div>
+    <div class="brand">SUDOKU <span>ARENA</span></div>
+    <div class="tagline">Think. Place. Conquer.</div>
+  </div>
+  <button id="homeBtn" class="ghost">⌂ Home</button>
+</header>
+
+<section id="home">
+  <div class="hero">
+    <p class="eyebrow">PYTHON POWERED • LOCALHOST</p>
+    <h1>Your puzzle.<br><span>Your rules.</span></h1>
+    <p>Choose a board size. Python generates a fresh Sudoku every time you play.</p>
+  </div>
+
+  <div class="levels">
+    <button class="level active" data-level="short">
+      <b>4×4</b><strong>SHORT</strong><small>Quick warm-up</small>
+    </button>
+    <button class="level" data-level="medium">
+      <b>9×9</b><strong>MEDIUM</strong><small>Classic Sudoku</small>
+    </button>
+    <button class="level" data-level="large">
+      <b>16×16</b><strong>LARGE</strong><small>Huge challenge</small>
+    </button>
+  </div>
+
+  <button id="start" class="start">START GAME <span>→</span></button>
+</section>
+
+<section id="game" class="hidden">
+  <div class="game-top">
+    <div>
+      <p id="levelName" class="eyebrow">MEDIUM</p>
+      <h2 id="title">Classic Sudoku</h2>
+    </div>
+    <div class="top-actions">
+      <button id="pause" class="ghost">Ⅱ Pause</button>
+      <button id="newGame" class="ghost">↻ New</button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div><small>TIME</small><b id="time">00:00</b></div>
+    <div><small>SCORE</small><b id="score">0</b></div>
+    <div><small>MISTAKES</small><b id="mistakes">0 / 3</b></div>
+    <div><small>PROGRESS</small><b id="progress">0%</b></div>
+  </div>
+
+  <div class="board-area">
+    <div id="board"></div>
+    <div id="paused" class="pause hidden">
+      <div>
+        <div class="pause-icon">Ⅱ</div>
+        <h2>PAUSED</h2>
+        <p>Timer and score are frozen.</p>
+        <button id="resume" class="start">RESUME <span>→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="numbers" class="numbers"></div>
+  <div class="tools">
+    <button id="erase" class="ghost">⌫ Erase</button>
+    <button id="hint" class="ghost">✦ Hint <i id="hints">3</i></button>
+    <button id="check" class="ghost accent">✓ Check</button>
+  </div>
+  <div id="message" class="message">Select an empty cell.</div>
+</section>
+
+<section id="result" class="hidden result">
+  <div class="result-card">
+    <div class="star">✦</div>
+    <p class="eyebrow">RESULT</p>
+    <h2 id="resultTitle">Puzzle solved!</h2>
+    <p id="resultText"></p>
+    <div class="final-stats">
+      <div><small>TIME</small><b id="finalTime">00:00</b></div>
+      <div><small>SCORE</small><b id="finalScore">0</b></div>
+      <div><small>MISTAKES</small><b id="finalMistakes">0</b></div>
+    </div>
+    <button id="again" class="start">PLAY AGAIN <span>→</span></button>
+    <button id="change" class="ghost">Change difficulty</button>
+  </div>
+</section>
+
+<footer>Sudoku Arena • Python localhost game • No internet required</footer>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
